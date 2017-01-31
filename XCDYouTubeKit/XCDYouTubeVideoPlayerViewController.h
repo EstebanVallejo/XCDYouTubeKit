@@ -76,6 +76,17 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
 @property (nonatomic, copy, nullable) NSString *videoIdentifier;
 
 /**
+ *  ------------------------------------
+ *  @name Accessing the video identifier
+ *  ------------------------------------
+ */
+
+/**
+ *  Handling videoPlayer when stopped.
+ */
+@property (nonatomic, copy, nullable) bool removeWhenStop;
+
+/**
  *  ------------------------------------------
  *  @name Defining the preferred video quality
  *  ------------------------------------------

@@ -83,6 +83,8 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 	if (videoIdentifier)
 		self.videoIdentifier = videoIdentifier;
 	
+	self.removeWhenStop = true;
+	
 	return self;
 }
 #pragma clang diagnostic pop
@@ -177,10 +179,12 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 	                            XCDMoviePlayerPlaybackDidFinishErrorUserInfoKey: error };
 	[[NSNotificationCenter defaultCenter] postNotificationName:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayer userInfo:userInfo];
 	
-	if (self.isEmbedded)
-		[self.moviePlayer.view removeFromSuperview];
-	else
-		[self.presentingViewController dismissMoviePlayerViewControllerAnimated];
+	if (self.removeWhenStop) {
+		if (self.isEmbedded)
+			[self.moviePlayer.view removeFromSuperview];
+		else
+			[self.presentingViewController dismissMoviePlayerViewControllerAnimated];
+	}
 }
 
 #pragma mark - UIViewController
