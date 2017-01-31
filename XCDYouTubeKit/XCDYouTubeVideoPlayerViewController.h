@@ -84,7 +84,7 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
 /**
  *  Handling videoPlayer when stopped.
  */
-@property (nonatomic, copy, nullable) bool removeWhenStop;
+@property (nonatomic, assign) BOOL removeWhenStop;
 
 /**
  *  ------------------------------------------
