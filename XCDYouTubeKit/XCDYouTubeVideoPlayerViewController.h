@@ -118,7 +118,7 @@ MP_EXTERN NSString *const XCDYouTubeVideoUserInfoKey;
  *
  *  Ownership of the XCDYouTubeVideoPlayerViewController instance is transferred to the view.
  */
-- (void) presentInView:(UIView *)view overridingControlStyle:(BOOL)overridingControlStyle;
+- (void) presentInView:(UIView *)view overrideControlStyle:(BOOL)overrideControlStyle;
 
 @end
 

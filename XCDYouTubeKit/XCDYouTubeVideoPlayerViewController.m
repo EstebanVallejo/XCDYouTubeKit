@@ -135,13 +135,13 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 	}];
 }
 
-- (void) presentInView:(UIView *)view overridingControlStyle:(BOOL)overridingControlStyle
+- (void) presentInView:(UIView *)view overrideControlStyle:(BOOL)overrideControlStyle
 {
 	static const void * const XCDYouTubeVideoPlayerViewControllerKey = &XCDYouTubeVideoPlayerViewControllerKey;
 	
 	self.embedded = YES;
 	
-	if (overridingControlStyle) {
+	if (overrideControlStyle) {
 		self.moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
 	}
 	
