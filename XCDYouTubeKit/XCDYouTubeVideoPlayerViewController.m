@@ -107,6 +107,12 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 	_videoIdentifier = [videoIdentifier copy];
 	
 	[self.videoOperation cancel];
+	
+	if (videoIdentifier == nil) {
+		NSLog(@"'videoIdentifier' is nil");
+		return;
+	}
+	
 	self.videoOperation = [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:videoIdentifier completionHandler:^(XCDYouTubeVideo *video, NSError *error)
 	{
 		if (video)
